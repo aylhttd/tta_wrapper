@@ -19,6 +19,13 @@ class Repeat(Layer):
 
     def compute_output_shape(self, input_shape):
         return (self.n, *input_shape[1:])
+    
+    def get_config(self):
+        config = super().get_config().copy()
+        config.update ({
+            'n': self.n
+        })
+        return config
 
 
 class TTA(Layer):
