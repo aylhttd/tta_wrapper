@@ -46,6 +46,13 @@ class TTA(Layer):
 
     def call(self, images):
         return self.apply_transforms(images)
+    
+    def get_config(self):
+        config = super().get_config().copy()
+        config.update ({
+            'functions': self.functions
+            'params': self.params
+        })
 
 
 class Merge(Layer):
@@ -69,4 +76,10 @@ class Merge(Layer):
 
     def compute_output_shape(self, input_shape):
         return (1, *input_shape[1:])
+    
+    def get_config(self):
+        config = super().get_config().copy()
+        config.update ({
+            'type': self.type
+        })
 
