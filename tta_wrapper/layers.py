@@ -50,7 +50,7 @@ class TTA(Layer):
     def get_config(self):
         config = super().get_config().copy()
         config.update ({
-            'functions': self.functions
+            'functions': self.functions,
             'params': self.params
         })
         return config
