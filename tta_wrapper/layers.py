@@ -53,6 +53,7 @@ class TTA(Layer):
             'functions': self.functions
             'params': self.params
         })
+        return config
 
 
 class Merge(Layer):
@@ -82,4 +83,5 @@ class Merge(Layer):
         config.update ({
             'type': self.type
         })
+        return config
 
